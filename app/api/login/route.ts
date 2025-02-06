@@ -4,8 +4,8 @@ export async function POST(request: Request) {
   const body = await request.json()
   const { username, password } = body
 
-  const correctUsername = process.env.NEXT_PUBLIC_ADMIN_USERNAME
-  const correctPassword = process.env.ADMIN_PASSWORD
+  const correctUsername = process.env.NEXT_PUBLIC_ADMIN_USERNAME ||"musha5"
+  const correctPassword = process.env.ADMIN_PASSWORD ||"12345"
 
   if (username === correctUsername && password === correctPassword) {
     // In a real application, you'd want to use a more secure method to generate and store tokens
